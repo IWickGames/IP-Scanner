@@ -1,5 +1,4 @@
 @echo off
-REM Created by @IWickGames
 set ran=%random%
 set /p enter="Set Start IP[y/n] "
 if %enter%==y goto setvars
@@ -12,13 +11,9 @@ if %num4%==255 goto exit
 if %num3%==255 set num3=0 && set /a num4=%num4%+ 1
 if %num2%==255 set num2=0 && set /a num3=%num3%+ 1
 if %num1%==255 set num1=0 && set /a num2=%num2%+ 1
-ping -n 1 -w 1 %num4%.%num3%.%num2%.%num1%>nul
-if %errorlevel%==0 (
-echo [%num4%.%num3%.%num2%.%num1%] PASS>>Scan%ran%.txt
-echo [%num4%.%num3%.%num2%.%num1%] PASS
-) else (
-echo [%num4%.%num3%.%num2%.%num1%] FALE
-)
+start "" /MIN "cmd /r ping -n 1 -w 1 %num4%.%num3%.%num2%.%num1%>nul && echo [%num4%.%num3%.%num2%.%num1%] PASS>>Scan%ran%.txt"
+echo Checking [%num4%.%num3%.%num2%.%num1%] ...
+ping -n 2 -w 1 127.0.0.1 >nul
 set /a num1=%num1%+ 1
 goto 1
 :exit
