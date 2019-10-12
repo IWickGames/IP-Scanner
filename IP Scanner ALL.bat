@@ -1,4 +1,5 @@
 @echo off
+REM Created by @IWickGames
 set ran=%random%
 set /p enter="Set Start IP[y/n] "
 if %enter%==y goto setvars

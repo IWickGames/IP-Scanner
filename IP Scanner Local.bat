@@ -1,4 +1,5 @@
 @echo off
+REM Created by @IWickGames
 set /p ip="Enter Bace IP address: "
 set num=0
 :1
